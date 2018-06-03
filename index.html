@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+    
+<html lang="ru" >
+    
+<head>
+    
+<meta charset="utf-8">
+    
+<!--
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+-->
+    
+<!--
+<script src="jquery-3.3.1.min.js">
+    
+</script>
+-->    
+<title>
+    
+</title>
+<!--
+ 
+<link href="style.css" rel="stylesheet" type="text/css">
+-->    
+<style type="text/css">
+    
+</style>
+    
+</head>
+    
+<body>
+
+<script type="text/javascript">
+//FREE CODE CAMP
+var str1="SERR PBQR PNZC";
+
+//FREE PIZZA!
+var str2="SERR CVMMN!";
+
+//FREE LOVE?
+var str3="SERR YBIR?";
+
+//FREE
+var str4="SERR";
+
+
+function rot13(str){
+var arrAlphabet= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+//преобразуем строку для дешифрования в массив
+var arrStr= str.split("");
+
+var newStr="";
+
+//цикл перебора элементов из входящего массива строки
+for(var i=0;i<arrStr.length;i++){
+
+//если находятся данные совпадения, они записываются в newStr
+if(arrStr[i]===" "){
+newStr+=arrStr[i];
+}
+if(arrStr[i]==="!"){
+newStr+=arrStr[i];
+}
+if(arrStr[i]==="?"){
+newStr+=arrStr[i];
+}
+
+//цикл перебора массива с алфавитом
+for(var y=0;y<arrAlphabet.length;y++){
+
+//если найдено совпадение элемента входящего массива с элементом массива с алфавитом
+if(arrStr[i]===arrAlphabet[y]){ 
+
+//если порядковый номер элемента массива с алфавитом больше 13
+if(y>=13){
+newStr+=arrAlphabet[y-13];
+}
+else{
+newStr+=arrAlphabet[y+13];
+}
+}
+}
+}
+return newStr;
+}
+
+alert(rot13(str2));
+
+</script>
+</body>
+</html>
